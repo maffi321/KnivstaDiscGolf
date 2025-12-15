@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Knivsta Discgolf | Bli medlem</title>
+    <meta name="description" content="Bli medlem i Knivsta Discgolf och stöd föreningen." />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <nav>
+          <div class="brand">Knivsta Discgolf</div>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a class="active" href="membership.html">Bli medlem</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrapper">
+      <section class="hero">
+        <div class="hero-content">
+          <span class="pill">Stöd föreningen</span>
+          <h1>Bli medlem från dag ett</h1>
+          <p>
+            Ett medlemskap hjälper oss att planera banbyggnation, event och utbildningar. Vi håller det enkelt tills
+            ett automatiserat formulär är på plats.
+          </p>
+          <a class="cta" href="mailto:info@knivstadiscgolf.se?subject=Medlemskap">Skicka intresse</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Så funkar det just nu</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>1. Kontakta oss</h3>
+            <p>
+              Skicka ett mejl med namn, telefon och kort presentation. Vi bekräftar inom ett par dagar.
+            </p>
+          </div>
+          <div class="card">
+            <h3>2. Bekräfta medlemskap</h3>
+            <p>
+              När avgiften är fastställd får du betalningsinformation och ett digitalt medlemskort.
+            </p>
+          </div>
+          <div class="card">
+            <h3>3. Engagera dig</h3>
+            <p>
+              Välj om du vill delta i arbetsgrupper, träningar eller bara spela. Allt stöd uppskattas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Förmåner och planer</h2>
+        <p class="lead">
+          Vi uppdaterar listan allteftersom fler samarbeten och aktiviteter spikas. Redan nu planerar vi för:
+        </p>
+        <ul>
+          <li>Gästspel på andra banor i Uppland genom vänföreningar.</li>
+          <li>Teknikkvällar med lokala instruktörer.</li>
+          <li>Arbetsdagar där medlemskap inkluderar fika och utlåning av utrustning.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Knivsta Discgolf – ideell förening i Uppland.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

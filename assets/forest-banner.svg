@@ -1,0 +1,41 @@
+<svg width="1600" height="600" viewBox="0 0 1600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#15291c" />
+      <stop offset="100%" stop-color="#35533c" />
+    </linearGradient>
+    <linearGradient id="disc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd27f" />
+      <stop offset="100%" stop-color="#ff9f43" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="600" fill="url(#bg)" />
+  <g fill="#162d20" opacity="0.9">
+    <rect y="480" width="1600" height="120" />
+  </g>
+  <g fill="#1e422f" opacity="0.9">
+    <polygon points="100 520 180 350 260 520" />
+    <polygon points="220 520 310 340 400 520" />
+    <polygon points="360 520 440 360 530 520" />
+    <polygon points="540 520 620 340 700 520" />
+    <polygon points="700 520 790 330 880 520" />
+    <polygon points="860 520 950 360 1040 520" />
+    <polygon points="1040 520 1130 340 1220 520" />
+    <polygon points="1200 520 1290 360 1380 520" />
+    <polygon points="1320 520 1420 350 1520 520" />
+  </g>
+  <g fill="#2a5b3e">
+    <polygon points="40 540 140 320 240 540" />
+    <polygon points="180 540 280 310 380 540" />
+    <polygon points="340 540 440 320 540 540" />
+    <polygon points="520 540 620 300 720 540" />
+    <polygon points="700 540 800 320 900 540" />
+    <polygon points="880 540 980 310 1080 540" />
+    <polygon points="1060 540 1160 300 1260 540" />
+    <polygon points="1240 540 1340 320 1440 540" />
+  </g>
+  <ellipse cx="1200" cy="160" rx="90" ry="24" fill="rgba(0,0,0,0.25)" />
+  <ellipse cx="1200" cy="140" rx="90" ry="28" fill="url(#disc)" />
+  <ellipse cx="1200" cy="140" rx="90" ry="28" fill="url(#disc)" transform="rotate(-8 1200 140)" />
+  <ellipse cx="1200" cy="130" rx="40" ry="12" fill="rgba(255,255,255,0.45)" />
+</svg>
