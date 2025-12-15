@@ -8,6 +8,18 @@
       <stop offset="0%" stop-color="#ffd27f" />
       <stop offset="100%" stop-color="#ff9f43" />
     </linearGradient>
+    <linearGradient id="basketMetal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f7f7" />
+      <stop offset="100%" stop-color="#9da7a3" />
+    </linearGradient>
+    <linearGradient id="basketBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffce87" />
+      <stop offset="100%" stop-color="#ff9248" />
+    </linearGradient>
+    <linearGradient id="basketChain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f3f3" />
+      <stop offset="100%" stop-color="#87908b" />
+    </linearGradient>
   </defs>
   <rect width="1600" height="600" fill="url(#bg)" />
   <g fill="#162d20" opacity="0.9">
@@ -34,8 +46,27 @@
     <polygon points="1060 540 1160 300 1260 540" />
     <polygon points="1240 540 1340 320 1440 540" />
   </g>
-  <ellipse cx="1200" cy="160" rx="90" ry="24" fill="rgba(0,0,0,0.25)" />
-  <ellipse cx="1200" cy="140" rx="90" ry="28" fill="url(#disc)" />
-  <ellipse cx="1200" cy="140" rx="90" ry="28" fill="url(#disc)" transform="rotate(-8 1200 140)" />
-  <ellipse cx="1200" cy="130" rx="40" ry="12" fill="rgba(255,255,255,0.45)" />
+  <g opacity="0.25">
+    <ellipse cx="1180" cy="160" rx="110" ry="34" fill="#0b0b0b" />
+  </g>
+  <ellipse cx="1180" cy="140" rx="90" ry="28" fill="url(#disc)" />
+  <ellipse cx="1180" cy="140" rx="90" ry="28" fill="url(#disc)" transform="rotate(-8 1180 140)" />
+  <ellipse cx="1180" cy="128" rx="44" ry="13" fill="rgba(255,255,255,0.45)" />
+  <g transform="translate(360 220)">
+    <ellipse cx="62" cy="292" rx="72" ry="18" fill="rgba(0,0,0,0.35)" />
+    <rect x="56" y="0" width="14" height="260" fill="url(#basketMetal)" />
+    <rect x="6" y="18" width="112" height="28" rx="8" fill="url(#basketBand)" />
+    <rect x="0" y="52" width="124" height="8" rx="4" fill="rgba(255,255,255,0.45)" />
+    <g stroke="url(#basketChain)" stroke-width="3" stroke-linecap="round">
+      <line x1="20" y1="56" x2="32" y2="150" />
+      <line x1="36" y1="56" x2="44" y2="150" />
+      <line x1="52" y1="56" x2="56" y2="150" />
+      <line x1="70" y1="56" x2="68" y2="150" />
+      <line x1="86" y1="56" x2="80" y2="150" />
+      <line x1="102" y1="56" x2="92" y2="150" />
+      <line x1="118" y1="56" x2="104" y2="150" />
+    </g>
+    <path d="M6 150 L118 150 L98 212 L26 212 Z" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.45)" stroke-width="3" />
+    <rect x="40" y="260" width="44" height="16" rx="8" fill="url(#basketMetal)" />
+  </g>
 </svg>

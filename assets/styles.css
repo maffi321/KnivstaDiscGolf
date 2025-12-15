@@ -81,12 +81,15 @@ nav a.active {
 
 .hero {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
   border-radius: 28px;
   padding: 4.5rem 3rem;
   margin: 2.5rem 0 3rem;
   overflow: hidden;
-  background: linear-gradient(120deg, rgba(19, 52, 36, 0.95), rgba(39, 79, 57, 0.92)),
-    url("assets/forest-banner.svg") center/cover;
+  background: linear-gradient(120deg, rgba(19, 52, 36, 0.95), rgba(39, 79, 57, 0.85));
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
 }
 
@@ -101,6 +104,21 @@ nav a.active {
 .hero-content {
   position: relative;
   max-width: 540px;
+  flex: 1 1 320px;
+}
+
+.hero-visual {
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-visual img {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 22px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .hero h1 {
@@ -199,6 +217,23 @@ section li {
   color: var(--sunset);
 }
 
+.map-link {
+  margin: 1rem 0 0;
+}
+
+.map-link a {
+  color: var(--moss);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.map-link a:hover {
+  color: var(--sunset);
+  border-color: var(--sunset);
+}
+
 footer {
   text-align: center;
   padding: 2rem 0 4rem;
@@ -214,6 +249,11 @@ footer {
 
   .hero {
     padding: 3.5rem 1.5rem;
+    flex-direction: column;
+  }
+
+  .hero-visual {
+    justify-content: center;
   }
 
   section {
