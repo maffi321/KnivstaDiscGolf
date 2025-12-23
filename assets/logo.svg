@@ -1,0 +1,24 @@
+<svg width="280" height="280" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="topArc" d="M120 190 A 176 176 0 0 1 392 190" fill="none" />
+    <path id="bottomArc" d="M392 322 A 176 176 0 0 1 120 322" fill="none" />
+  </defs>
+  <path d="M256 16c132 0 240 108 240 240s-108 240-240 240S16 388 16 256 124 16 256 16Z" fill="#050505" />
+  <circle cx="256" cy="256" r="176" fill="#fefefe" />
+  <ellipse cx="256" cy="270" rx="130" ry="44" fill="#050505" />
+  <ellipse cx="256" cy="260" rx="130" ry="38" fill="#0e0e0e" />
+  <ellipse cx="256" cy="250" rx="110" ry="30" fill="#050505" />
+  <ellipse cx="256" cy="242" rx="100" ry="26" fill="#151515" />
+  <path d="M242 98c0-25 14-46 14-46s14 21 14 46v210c0 41-14 86-14 86s-14-45-14-86z" fill="#050505" />
+  <rect x="226" y="190" width="60" height="22" rx="10" fill="#050505" />
+  <path d="M246 478c-9-32-14-66-14-100h48c0 34-5 68-14 100-4 13-16 13-20 0z" fill="#050505" />
+  <ellipse cx="256" cy="150" rx="22" ry="12" fill="#050505" />
+  <ellipse cx="256" cy="140" rx="20" ry="10" fill="#0f0f0f" />
+  <path d="M256 118c4 0 8 4 8 8s-4 8-8 8-8-4-8-8 4-8 8-8Z" fill="#fefefe" />
+  <text fill="#ffffff" font-family="'Montserrat', 'Inter', sans-serif" font-size="52" font-weight="700" letter-spacing="6">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">KNIVSTA</textPath>
+  </text>
+  <text fill="#ffffff" font-family="'Montserrat', 'Inter', sans-serif" font-size="50" font-weight="700" letter-spacing="5">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">DISCGOLF</textPath>
+  </text>
+</svg>

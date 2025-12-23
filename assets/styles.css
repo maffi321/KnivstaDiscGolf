@@ -49,11 +49,25 @@ nav {
 }
 
 .brand {
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--moss);
-  font-size: 1rem;
+  font-size: 1.55rem;
+  line-height: 1.1;
+}
+
+.brand img {
+  width: 90px;
+  height: 90§px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+}
+
+.brand span {
+  display: inline-block;
 }
 
 nav ul {
@@ -245,6 +259,15 @@ footer {
   nav {
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  .brand {
+    font-size: 1.25rem;
+  }
+
+  .brand img {
+    width: 60px;
+    height: 60px;
   }
 
   .hero {
