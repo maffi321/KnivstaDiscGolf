@@ -32,11 +32,42 @@
           <p>
             Ett medlemskap hjälper oss att planera banbyggnation, event och utbildningar.
           </p>
-          <a class="cta" href="mailto:info@knivstadiscgolf.se?subject=Medlemskap">Bli medlem</a>
+          <a class="cta" href="#membership-form">Bli medlem</a>
         </div>
         <div class="hero-visual">
           <img src="assets/forest-banner.svg" alt="Illustration av en discgolfkorg i skogen" />
         </div>
+      </section>
+
+      <section id="membership-form">
+        <h2>Medlemsansökan</h2>
+        <p class="lead">
+          Fyll i dina uppgifter så återkommer vi med bekräftelse och information om medlemsavgiften.
+        </p>
+        <form class="member-form" id="member-form" data-endpoint="https://script.google.com/macros/s/AKfycbxBNXTZT05G0SwCSp3fml78xMGpP7d6cA-v4LtJxdrU2lKmEzmBU5BbqvhnaZ34cOBXWg/exec">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="firstName">Förnamn</label>
+              <input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
+            </div>
+            <div class="form-field">
+              <label for="lastName">Efternamn</label>
+              <input type="text" id="lastName" name="lastName" autocomplete="family-name" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required />
+            </div>
+            <div class="form-field">
+              <label for="email">E-post</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="cta" type="submit">Skicka medlemsansökan</button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+          </div>
+        </form>
       </section>
 
       <section>
@@ -82,6 +113,43 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      const memberForm = document.getElementById("member-form");
+      const formStatus = document.getElementById("form-status");
+
+      if (memberForm && formStatus) {
+        memberForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const endpoint = memberForm.dataset.endpoint || "";
+
+          if (!endpoint || endpoint.includes("PASTE_GOOGLE_SCRIPT_URL_HERE")) {
+            formStatus.textContent =
+              "Formuläret är inte aktiverat ännu. Lägg in din Google Script-länk.";
+            return;
+          }
+
+          formStatus.textContent = "Skickar...";
+
+          try {
+            const response = await fetch(endpoint, {
+              method: "POST",
+              mode: "no-cors",
+              body: new FormData(memberForm),
+            });
+
+            if (response.type !== "opaque" && !response.ok) {
+              throw new Error("Request failed");
+            }
+
+            formStatus.textContent =
+              "Tack! Din ansökan är skickad. Vi återkommer så snart vi kan.";
+            memberForm.reset();
+          } catch (error) {
+            formStatus.textContent =
+              "Det gick inte att skicka just nu. Prova igen om en stund.";
+          }
+        });
+      }
     </script>
   </body>
 </html>
