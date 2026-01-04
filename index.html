@@ -6,6 +6,12 @@
     <title>Knivsta Discgolf | Hem</title>
     <meta name="description" content="Knivsta Discgolf – en gemenskap i skogens rytm." />
     <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site-config.js"></script>
+    <script>
+      if (window.SITE_CONFIG && window.SITE_CONFIG.maintenance) {
+        window.location.href = "maintenance.html";
+      }
+    </script>
   </head>
   <body>
     <header>

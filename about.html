@@ -6,6 +6,12 @@
     <title>Knivsta Discgolf | Om oss</title>
     <meta name="description" content="Lär känna föreningen Knivsta Discgolf." />
     <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site-config.js"></script>
+    <script>
+      if (window.SITE_CONFIG && window.SITE_CONFIG.maintenance) {
+        window.location.href = "maintenance.html";
+      }
+    </script>
   </head>
   <body>
     <header>

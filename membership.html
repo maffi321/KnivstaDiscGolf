@@ -6,6 +6,12 @@
     <title>Knivsta Discgolf | Bli medlem</title>
     <meta name="description" content="Bli medlem i Knivsta Discgolf och stöd föreningen." />
     <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site-config.js"></script>
+    <script>
+      if (window.SITE_CONFIG && window.SITE_CONFIG.maintenance) {
+        window.location.href = "maintenance.html";
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -37,8 +43,7 @@
           <img src="assets/forest-banner.svg" alt="Illustration av en discgolfkorg i skogen" />
         </div>
       </section>
-<!--
-      <section>
+<!--      <section>
         <h2>Så funkar det just nu</h2>
         <div class="grid">
           <div class="card">
@@ -60,8 +65,7 @@
             </p>
           </div>
         </div>
-      </section>
--->
+      </section> -->
       <section id="membership-form">
         <h2>Medlemsansökan</h2>
         <p class="lead">
@@ -90,6 +94,18 @@
             Öppna formuläret i nytt fönster
           </a>
         </p>
+      </section>
+
+      <section>
+        <h2>Integritet (GDPR)</h2>
+        <p class="lead">
+          Vi behandlar dina personuppgifter för att hantera medlemsansökan och medlemskommunikation.
+        </p>
+        <ul>
+          <li>Uppgifter: förnamn, efternamn, telefonnummer och e-post.</li>
+          <li>Lagring: sparas i Google Forms/Sheets och delas endast med föreningens ansvariga.</li>
+          <li>Rättigheter: du kan begära utdrag, rättelse eller radering via info@knivstadiscgolf.se.</li>
+        </ul>
       </section>
     </main>
 

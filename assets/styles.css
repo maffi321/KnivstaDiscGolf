@@ -293,6 +293,35 @@ section li {
   font-weight: 600;
 }
 
+.maintenance {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.maintenance-card {
+  max-width: 640px;
+  background: rgba(18, 39, 28, 0.9);
+  border-radius: 22px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.maintenance-card a {
+  color: var(--moss);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.maintenance-card a:hover {
+  color: var(--sunset);
+  border-color: var(--sunset);
+}
+
 footer {
   text-align: center;
   padding: 2rem 0 4rem;
