@@ -33,3 +33,11 @@ columns:
 - `summary`
 - `body`
 - `link` (optional external URL)
+
+## Git stuff
+
+git status
+git add .
+git commit -m "Update site"
+git pull --rebase origin main
+git push -u origin main
