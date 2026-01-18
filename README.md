@@ -22,3 +22,14 @@ When enabled, all pages redirect to `maintenance.html`.
 
 ## GitHub Pages
 Host by pushing this folder to a GitHub repo and enabling Pages from the `main` branch root.
+
+## News (Google Sheets)
+Add news items in a public Google Sheet and set its ID in `assets/site-config.js`.
+
+columns:
+- `id` (unique slug, optional)
+- `date`
+- `title`
+- `summary`
+- `body`
+- `link` (optional external URL)

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Knivsta Discgolf | Nyhet</title>
+    <meta name="description" content="Nyheter från Knivsta Discgolf." />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site-config.js"></script>
+    <script>
+      if (window.SITE_CONFIG && window.SITE_CONFIG.maintenance) {
+        window.location.href = "maintenance.html";
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <nav>
+          <div class="brand">
+            <img src="assets/logo.png" alt="Knivsta Discgolf logotyp" />
+            <span>Knivsta Discgolf</span>
+          </div>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="membership.html">Bli medlem</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrapper">
+      <section class="news-detail">
+        <a class="news-back" href="index.html#news">Tillbaka till startsidan</a>
+        <div id="news-detail"></div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Knivsta Discgolf – ideell förening i Knivsta.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/news.js"></script>
+  </body>
+</html>
