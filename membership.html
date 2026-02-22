@@ -18,7 +18,7 @@
       <div class="wrapper">
         <nav>
           <div class="brand">
-            <img src="assets/logo.png" alt="Knivsta Discgolf logotyp" />
+            <img src="assets/logo-header.png" alt="Knivsta Discgolf logotyp" />
             <span>Knivsta Discgolf</span>
           </div>
           <ul>
@@ -69,10 +69,11 @@
       <section id="membership-form">
         <h2>Medlemsansökan</h2>
         <p class="lead">
-          Fyll i formuläret nedan så återkommer vi med bekräftelse och information om medlemsavgiften.
+          Fyll i formuläret nedan för att ansöka om medlemskap. Ett medlemskap kostar 200 kr per år. När du skickat in din ansökan får du ett mejl med information om hur betalning sker.
         </p>
         <div class="form-embed">
           <iframe
+            id="membership-form-frame"
             src="https://docs.google.com/forms/d/e/1FAIpQLSeX0Es5Slq0kUfgkKUFa4xHghCc6pSkMgLSmD3TvzciKDlXTw/viewform?embedded=true"
             title="Medlemsansökan Knivsta Discgolf"
             loading="lazy"
@@ -87,6 +88,7 @@
         <p class="form-fallback">
           <span class="form-warning">Om du har problem med formuläret testa: </span>
           <a
+            id="membership-form-link"
             href="https://docs.google.com/forms/d/e/1FAIpQLSeX0Es5Slq0kUfgkKUFa4xHghCc6pSkMgLSmD3TvzciKDlXTw/viewform?usp=header"
             target="_blank"
             rel="noopener noreferrer"
@@ -97,14 +99,18 @@
       </section>
 
       <section>
-        <h2>Integritet (GDPR)</h2>
+        <h2>Integritet och personuppgifter (GDPR)</h2>
         <p class="lead">
-          Vi behandlar dina personuppgifter för att hantera medlemsansökan och medlemskommunikation.
+          Knivsta Discgolf behandlar personuppgifter för att hantera medlemsansökan, medlemsregister och kommunikation
+          kopplad till föreningens verksamhet.
         </p>
         <ul>
-          <li>Uppgifter: förnamn, efternamn, telefonnummer och e-post.</li>
-          <li>Lagring: sparas i Google Forms/Sheets och delas endast med föreningens ansvariga.</li>
-          <li>Rättigheter: du kan begära utdrag, rättelse eller radering via info@knivstadiscgolf.se.</li>
+          <li>Personuppgifter vi behandlar: namn, adress, personnummer, e-post, telefonnummer och andra uppgifter du lämnar i ansökan.</li>
+          <li>Ändamål och rättslig grund: administration av medlemskap (avtal), föreningskommunikation (berättigat intresse) samt bokföring när tillämpligt (rättslig förpliktelse).</li>
+          <li>Lagringstid: uppgifter sparas så länge medlemskapet är aktivt och därefter endast så länge det krävs enligt lag eller berättigade administrativa behov.</li>
+          <li>Delning: uppgifterna används endast av behöriga personer i föreningen och lagras i Google Forms/Google Sheets för administration.</li>
+          <li>Dina rättigheter: du kan begära registerutdrag, rättelse, radering, begränsning eller invända mot viss behandling.</li>
+          <li>Kontakt: frågor om personuppgifter skickas till info@knivstadiscgolf.se.</li>
         </ul>
       </section>
     </main>
@@ -115,6 +121,24 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      const membershipConfig = window.SITE_CONFIG && window.SITE_CONFIG.membershipForm;
+      const membershipFrame = document.getElementById("membership-form-frame");
+      const membershipLink = document.getElementById("membership-form-link");
+
+      if (membershipConfig) {
+        if (membershipFrame && membershipConfig.embedUrl) {
+          membershipFrame.src = membershipConfig.embedUrl;
+        }
+
+        if (membershipFrame && membershipConfig.title) {
+          membershipFrame.title = membershipConfig.title;
+        }
+
+        if (membershipLink && membershipConfig.openUrl) {
+          membershipLink.href = membershipConfig.openUrl;
+        }
+      }
     </script>
   </body>
 </html>

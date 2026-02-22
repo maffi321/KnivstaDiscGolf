@@ -20,6 +20,12 @@ window.SITE_CONFIG = {
 
 When enabled, all pages redirect to `maintenance.html`.
 
+## Membership Form
+Membership uses an embedded Google Form. To switch to a new spreadsheet/form, only update:
+- `window.SITE_CONFIG.membershipForm.embedUrl`
+- `window.SITE_CONFIG.membershipForm.openUrl`
+- `window.SITE_CONFIG.membershipForm.title`
+
 ## GitHub Pages
 Host by pushing this folder to a GitHub repo and enabling Pages from the `main` branch root.
 

@@ -38,7 +38,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(9, 28, 20, 0.85);
 }
 
 header .wrapper {
@@ -65,8 +65,11 @@ nav {
 }
 
 .brand img {
-  width: 90px;
-  height: 90px;
+  width: 170px;
+  height: auto;
+  max-height: 86px;
+  object-fit: contain;
+  border-radius: 6px;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
 }
 
@@ -147,6 +150,12 @@ nav a.active {
 .hero p {
   margin-bottom: 2rem;
   color: rgba(242, 245, 233, 0.85);
+}
+
+.home-intro {
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  line-height: 1.5;
+  font-weight: 700;
 }
 
 .pill {
@@ -424,8 +433,9 @@ footer {
   }
 
   .brand img {
-    width: 64px;
-    height: 64px;
+    width: 128px;
+    height: auto;
+    max-height: 62px;
   }
 
   nav ul {
@@ -462,6 +472,10 @@ footer {
   .hero p {
     margin: 0 auto 1.35rem;
     max-width: 28rem;
+  }
+
+  .home-intro {
+    font-size: clamp(1.05rem, 5.3vw, 1.3rem);
   }
 
   .hero-content {
