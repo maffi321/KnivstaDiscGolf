@@ -38,4 +38,16 @@ columns:
 - `title`
 - `summary`
 - `body`
+- `image` (optional image URL)
 - `link` (optional external URL)
+- `doc1_title`, `doc1_url` (optional)
+- `doc2_title`, `doc2_url` (optional)
+- `doc3_title`, `doc3_url` (optional)
+- `doc4_title`, `doc4_url` (optional)
+- `doc5_title`, `doc5_url` (optional)
+- `doc6_title`, `doc6_url` (optional)
+- `doc7_title`, `doc7_url` (optional)
+
+If `link` is empty, the news card opens the local `news.html` detail page.
+If `image` is set, it is shown on the news card and the detail page.
+If `docN_title` and `docN_url` are set, they are shown as buttons under `Handlingar` on the detail page.

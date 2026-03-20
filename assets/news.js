@@ -130,7 +130,7 @@
     const text = label
       .toLowerCase()
       .trim()
-      .replace(/\s+/g, "")
+      .replace(/[\s_-]+/g, "")
       .replace(/[åä]/g, "a")
       .replace(/ö/g, "o");
 
@@ -153,20 +153,61 @@
     text: "body",
     innehall: "body",
     beskrivning: "body",
+    image: "image",
+    bild: "image",
+    imageurl: "image",
+    bildurl: "image",
+    imagesrc: "image",
     link: "link",
     lank: "link",
     url: "link",
   };
 
   function normalizeItem(item) {
+    const documents = collectDocuments(item);
+
     return {
       id: item.id || "",
       date: item.date || "",
       title: item.title || "",
       summary: item.summary || "",
       body: item.body || item.summary || "",
+      image: item.image || "",
       link: item.link || "",
+      documents: documents,
     };
+  }
+
+  function collectDocuments(item) {
+    const docs = {};
+
+    Object.keys(item).forEach((key) => {
+      const match = key.match(/^(doc|document|bilaga|attachment)(\d+)(title|url|name|label|link)$/);
+      if (!match) {
+        return;
+      }
+
+      const index = match[2];
+      const field = match[3];
+      docs[index] = docs[index] || { title: "", url: "" };
+
+      if (field === "url" || field === "link") {
+        docs[index].url = item[key];
+      } else {
+        docs[index].title = item[key];
+      }
+    });
+
+    return Object.keys(docs)
+      .sort((a, b) => Number(a) - Number(b))
+      .map((index, position) => {
+        const doc = docs[index];
+        return {
+          title: doc.title || "Dokument " + (position + 1),
+          url: doc.url || "",
+        };
+      })
+      .filter((doc) => doc.url);
   }
 
   function escapeHtml(value) {
@@ -196,9 +237,17 @@
         const safeTitle = escapeHtml(item.title);
         const safeSummary = escapeHtml(summary);
         const safeLink = escapeHtml(link);
+        const image = item.image
+          ? "<img class=\"news-image\" src=\"" +
+            escapeHtml(item.image) +
+            "\" alt=\"" +
+            safeTitle +
+            "\" loading=\"lazy\">"
+          : "";
 
         return (
           "<article class=\"news-item\">" +
+          image +
           "<div class=\"news-meta\">" +
           meta +
           "</div>" +
@@ -239,6 +288,14 @@
     const safeBody = escapeHtml(body).replace(/\n/g, "<br>");
     const meta = match.date ? "<span>" + escapeHtml(match.date) + "</span>" : "";
     const safeTitle = escapeHtml(match.title);
+    const image = match.image
+      ? "<img class=\"news-detail-image\" src=\"" +
+        escapeHtml(match.image) +
+        "\" alt=\"" +
+        safeTitle +
+        "\" loading=\"lazy\">"
+      : "";
+    const documents = renderDocuments(match.documents || []);
     const source =
       match.link && match.link !== ""
         ? "<p><a class=\"news-link\" href=\"" +
@@ -253,9 +310,36 @@
       "<h1 class=\"news-detail-title\">" +
       safeTitle +
       "</h1>" +
+      image +
       "<p class=\"news-detail-body\">" +
       safeBody +
       "</p>" +
+      documents +
       source;
+  }
+
+  function renderDocuments(documents) {
+    if (!documents.length) {
+      return "";
+    }
+
+    return (
+      "<section class=\"news-documents\">" +
+      "<h2 class=\"news-documents-title\">Handlingar</h2>" +
+      "<div class=\"news-document-list\">" +
+      documents
+        .map((doc) => {
+          return (
+            "<a class=\"news-document-link\" href=\"" +
+            escapeHtml(doc.url) +
+            "\" target=\"_blank\" rel=\"noopener noreferrer\">" +
+            escapeHtml(doc.title) +
+            "</a>"
+          );
+        })
+        .join("") +
+      "</div>" +
+      "</section>"
+    );
   }
 })();
