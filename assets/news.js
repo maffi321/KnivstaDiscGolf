@@ -161,6 +161,10 @@
     link: "link",
     lank: "link",
     url: "link",
+    linktext: "linkText",
+    lanktext: "linkText",
+    buttontext: "linkText",
+    knapptext: "linkText",
   };
 
   function normalizeItem(item) {
@@ -174,6 +178,7 @@
       body: item.body || item.summary || "",
       image: item.image || "",
       link: item.link || "",
+      linkText: item.linkText || "",
       documents: documents,
     };
   }
@@ -231,7 +236,8 @@
     target.innerHTML = sliced
       .map((item) => {
         const id = item.id || slugify(item.title);
-        const link = item.link || ("news.html?id=" + encodeURIComponent(id));
+        const detailLink = "news.html?id=" + encodeURIComponent(id);
+        const link = item.link && !item.linkText ? item.link : detailLink;
         const summary = item.summary || item.body || "";
         const meta = item.date ? "<span>" + escapeHtml(item.date) + "</span>" : "";
         const safeTitle = escapeHtml(item.title);
@@ -298,9 +304,11 @@
     const documents = renderDocuments(match.documents || []);
     const source =
       match.link && match.link !== ""
-        ? "<p><a class=\"news-link\" href=\"" +
+        ? "<p class=\"news-action\"><a class=\"news-cta\" href=\"" +
           escapeHtml(match.link) +
-          "\" target=\"_blank\" rel=\"noopener noreferrer\">Läs original</a></p>"
+          "\" target=\"_blank\" rel=\"noopener noreferrer\">" +
+          escapeHtml(match.linkText || "Läs original") +
+          "</a></p>"
         : "";
 
     target.innerHTML =

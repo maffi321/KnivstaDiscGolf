@@ -40,6 +40,7 @@ columns:
 - `body`
 - `image` (optional image URL)
 - `link` (optional external URL)
+- `button_text` (optional button text for `link`)
 - `doc1_title`, `doc1_url` (optional)
 - `doc2_title`, `doc2_url` (optional)
 - `doc3_title`, `doc3_url` (optional)
@@ -49,5 +50,7 @@ columns:
 - `doc7_title`, `doc7_url` (optional)
 
 If `link` is empty, the news card opens the local `news.html` detail page.
+If both `link` and `button_text` are set, the news card opens its detail page and
+the external link is shown there as a button with the chosen text.
 If `image` is set, it is shown on the news card and the detail page.
 If `docN_title` and `docN_url` are set, they are shown as buttons under `Handlingar` on the detail page.

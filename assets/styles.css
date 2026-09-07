@@ -333,6 +333,34 @@ section li {
   border-color: var(--sunset);
 }
 
+.news-action {
+  margin: 1.5rem 0 0;
+}
+
+.news-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.75rem 1.15rem;
+  border-radius: 999px;
+  background: var(--moss);
+  color: #08261d;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.news-cta:hover {
+  background: var(--sunset);
+  transform: translateY(-1px);
+}
+
+.news-cta:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
 .news-note {
   margin-top: 1rem;
   color: rgba(242, 245, 233, 0.7);
