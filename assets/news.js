@@ -236,8 +236,7 @@
     target.innerHTML = sliced
       .map((item) => {
         const id = item.id || slugify(item.title);
-        const detailLink = "news.html?id=" + encodeURIComponent(id);
-        const link = item.link && !item.linkText ? item.link : detailLink;
+        const link = "news.html?id=" + encodeURIComponent(id);
         const summary = item.summary || item.body || "";
         const meta = item.date ? "<span>" + escapeHtml(item.date) + "</span>" : "";
         const safeTitle = escapeHtml(item.title);
@@ -307,7 +306,7 @@
         ? "<p class=\"news-action\"><a class=\"news-cta\" href=\"" +
           escapeHtml(match.link) +
           "\" target=\"_blank\" rel=\"noopener noreferrer\">" +
-          escapeHtml(match.linkText || "Läs original") +
+          escapeHtml(match.linkText || "Öppna länk") +
           "</a></p>"
         : "";
 

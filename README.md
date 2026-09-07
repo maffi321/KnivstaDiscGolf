@@ -49,8 +49,8 @@ columns:
 - `doc6_title`, `doc6_url` (optional)
 - `doc7_title`, `doc7_url` (optional)
 
-If `link` is empty, the news card opens the local `news.html` detail page.
-If both `link` and `button_text` are set, the news card opens its detail page and
-the external link is shown there as a button with the chosen text.
+The news card always opens the local `news.html` detail page.
+If `link` is set, the external link is shown below the full news text as a button.
+Use `button_text` to choose the button label; otherwise it says `Öppna länk`.
 If `image` is set, it is shown on the news card and the detail page.
 If `docN_title` and `docN_url` are set, they are shown as buttons under `Handlingar` on the detail page.
